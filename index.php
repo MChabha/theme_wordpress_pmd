@@ -77,4 +77,31 @@
     ?>
 </div> <!-- /content -->
 */ ?>
+
+<?php
+$args = array( 'post_type' => 'film' );
+
+$the_query = new WP_Query( $args );
+
+// The Loop
+if ( $the_query->have_posts() ) {
+
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        if(has_post_thumbnail())
+        {
+          the_post_thumbnail( 'single_thumbnail');
+        }
+        echo '<h1>' . get_the_title() . '</h1>';
+
+        the_field('realisateur_du_film');
+        echo '<h2>Durée du film : '.get_field('duree_du_film').'</h2>';
+    }
+    /* Restore original Post Data */
+    wp_reset_postdata();
+} else {
+    // no posts found
+}
+
+?>
 <?php get_footer(); //appel du template footer.php ?>
