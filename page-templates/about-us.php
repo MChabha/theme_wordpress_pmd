@@ -5,6 +5,7 @@ Template Name: Gabarit A propos de nous.
 ?><?php get_header(); ?>
 
 <main role="main" class="probootstrap-main js-probootstrap-main">
+  <img src="<?php echo IMAGES_URL.'/logo.png';?>" alt="image">
   <?php
   // boucle WordPress
   if (have_posts()){
