@@ -48,6 +48,30 @@ Template Name: Gabarit A propos de nous.
    }
 
    ?>
+   <?php
+   $terms = get_terms( 'genre', 'orderby=count&hide_empty=0' );
+     if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+     echo '<ul>';
+     foreach ( $terms as $term ) {
+       /*if(isset($_GET['genre']) && genre!='')
+       {
+         if($term->slug == $_GET['genre'])
+         {
+           $current="en_cours";
+         }
+         else {
+           $current='';
+         }
+       }
+       echo '<li><a href="'.get_permalink(73).'?genre='.$term->slug.'" class="'.$current.'">' . $term->name . '</a></li>';
+
+       */
+         echo '<li><a href="'.get_permalink(73).'?genre='.$term->slug.'" >' . $term->name . '</a></li>';
+     }
+     echo '</ul>';
+    }
+
+    ?>
 </main>
 
 <?php get_footer(); ?>
