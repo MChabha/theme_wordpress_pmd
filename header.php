@@ -23,13 +23,23 @@
       </div>
       <div class="probootstrap-overflow">
         <nav class="probootstrap-nav">
-          <ul>
+          <?php
+          $args=array(
+              'theme_location' => 'header', // nom du slug
+              'menu' => 'header_fr', // nom à donner cette occurence du menu
+              'menu_class' => 'menu_header', // class à attribuer au menu
+              'menu_id' => 'menu_id' // id à attribuer au menu
+              // voir les autres arguments possibles sur le codex
+          );
+          wp_nav_menu($args);
+          ?>
+          <!--<ul>
             <li class="probootstrap-animate active" data-animate-effect="fadeInLeft"><a href="index.html">Home</a></li>
             <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="about.html">About</a></li>
             <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="services.html">Services</a></li>
             <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="portfolio.html">Portfolio</a></li>
             <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="contact.html">Contact</a></li>
-          </ul>
+          </ul>-->
         </nav>
         <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
           <ul class="list-unstyled d-flex probootstrap-aside-social">

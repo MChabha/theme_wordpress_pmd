@@ -8,8 +8,10 @@ function add_aside_styles(){
 wp_register_style('googleFonts','https://fonts.googleapis.com/css?family=Work+Sans');
 wp_enqueue_style('googleFonts');
 
+
 wp_register_style("bootstrap", get_template_directory_uri() . '/sources/styles/bootstrap.min.css');
 wp_enqueue_style('bootstrap');
+
 
 wp_register_style("iconic", get_template_directory_uri() . '/sources/styles/open-iconic-bootstrap.min.css');
 wp_enqueue_style('iconic');
@@ -28,4 +30,7 @@ wp_enqueue_style('animate');
 
 wp_register_style( 'main_style', get_template_directory_uri() . '/sources/styles/style.css' );
 wp_enqueue_style('main_style');
+
+wp_register_style('ninjaformsperso',get_template_directory_uri() . '/sources/styles/ninjaformsperso.css');
+wp_enqueue_style('ninjaformsperso');
 }
